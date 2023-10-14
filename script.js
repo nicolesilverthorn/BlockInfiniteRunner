@@ -124,8 +124,8 @@ Platform.prototype.draw = function() {
 
 function PlatformManager(){
   this.maxDistanceBetween = 300;
-  this.colors = ['#2ca8c2', '#98cb4a', '#f76d3c', '#f15f74', '#5481e6'];
-
+  this.colors = ['#006994', '#333399', '#00ced1', '#00ccff', '#5d89ba'];
+				
   this.first = new Platform({x: 300, y: InfiniteRunner.width / 2, width: 400, height: 70})
   this.second = new Platform({x: (this.first.x + this.first.width) + random(this.maxDistanceBetween - 150, this.maxDistanceBetween), y: random(this.first.y - 128, InfiniteRunner.height - 80), width: 400, height: 70})
   this.third = new Platform({x: (this.second.x + this.second.width) + random(this.maxDistanceBetween - 150, this.maxDistanceBetween), y: random(this.second.y - 128, InfiniteRunner.height - 80), width: 400, height: 70})
