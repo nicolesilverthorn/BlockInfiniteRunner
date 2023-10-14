@@ -1,0 +1,36 @@
+body{
+	background: #f9fcff;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+canvas{
+	background: #e7ebee;
+	border: 1px solid #000;
+	filter: drop-shadow(3px 3px 5px #b8b8b8);
+}
+
+#header{
+	margin-top: 2%;		
+	display: block;
+	font-size: 2em;
+	font-weight: bold;
+	background-image: linear-gradient(45deg, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, 
+											 #2ca8c2, #2ca8c2, #98cb4a, #f76d3c, #f15f74, #5481e6, #5481e6, 
+											 #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff);
+	filter: drop-shadow(3px 3px 3px #b8b8b8);											 
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+	-webkit-text-stroke: 0.5px black;
+}
+
+#container{
+	margin-top: 2%;
+	display: inline-block;
+}
+
+#controls{
+	margin-top: 1.25%;	
+}
