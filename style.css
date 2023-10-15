@@ -17,13 +17,14 @@ canvas{
 	display: block;
 	font-size: 2em;
 	font-weight: bold;
-	background-image: linear-gradient(45deg, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff,  
-											 #006994, #006994, #333399, #00ced1, #00ccff, #5d89ba, #5d89ba, 
-											 #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff);
+	background-image: linear-gradient(45deg, #fff, #fff, #fff, #fff, #fff, #fff, #fff,  
+											 #006994, #006994, #333399, #333399, #00ced1, #00ced1, #00ccff, #00ccff, #5d89ba, #5d89ba, 
+											 #fff, #fff, #fff, #fff, #fff, #fff, #fff);
 	filter: drop-shadow(3px 3px 3px #b8b8b8);											 
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;	
 	-webkit-text-stroke: 0.5px black;
+	width: 100%;
 }
 
 #container{
