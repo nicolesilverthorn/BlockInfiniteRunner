@@ -95,7 +95,7 @@ Player.prototype.update = function() {
 	InfiniteRunner.seconds = 0;
 	InfiniteRunner.hiScore = 0;	
   }
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging || InfiniteRunner.touchstart) && this.velocityY < -8){
     this.velocityY += -0.75;
   }
 };
@@ -207,7 +207,7 @@ InfiniteRunner.setup = function () {
   this.particlesMax = 20;
   this.collidedPlatform = null;
   this.scoreColor = '#000';
-	this.player = new Player({x: 150, y: 30, width: 28, height: 32});  
+	this.player = new Player({x: 150, y: 30, width: 20, height: 30});  
 	this.seconds = 0;  
 	this.hiScore = 0;  
 };
