@@ -95,7 +95,7 @@ Player.prototype.update = function() {
 	InfiniteRunner.seconds = 0;
 	InfiniteRunner.hiScore = 0;	
   }
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging || InfiniteRunner.touchstart) && this.velocityY < -8){
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging || InfiniteRunner.ontouchstart) && this.velocityY < -8){
     this.velocityY += -0.75;
   }
 };
@@ -264,7 +264,7 @@ InfiniteRunner.update = function() {
         this.player.velocityY = -10 + -(this.aceleration * 4);
         this.player.velocityX = -20 + -(this.aceleration * 4);
       } else {
-        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
+        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W || this.ontouchstart){
           this.player.velocityY = this.player.jumpSize;
 		  if(seconds > hiScore){
             hiScore = seconds;
