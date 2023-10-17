@@ -1,7 +1,5 @@
 var i = 0;
 
-document.body.addEventListener('touchstart', function(e) {});
-
 function random( min, max ) {
   return Math.round( min + ( Math.random() * ( max - min ) ) );
 }
@@ -96,12 +94,15 @@ Player.prototype.update = function() {
     InfiniteRunner.platformManager.updateWhenLose();
 	InfiniteRunner.seconds = 0;
 	InfiniteRunner.hiScore = 0;	
-  }
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){
-	
+  } 
+  
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging || InfiniteRunner.touchstart) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
+  
 };
+
+addEventListener("touchstart", (update) => {});
 
 Player.prototype.draw = function() {
   InfiniteRunner.fillStyle = this.color;
@@ -215,7 +216,7 @@ InfiniteRunner.setup = function () {
 	this.hiScore = 0;  
 };
 
-InfiniteRunner.update = function() {
+	InfiniteRunner.update = function() {
 	setInterval(score, 1000);
   this.player.update();
   switch(seconds){ 
@@ -267,7 +268,7 @@ InfiniteRunner.update = function() {
         this.player.velocityY = -10 + -(this.aceleration * 4);
         this.player.velocityX = -20 + -(this.aceleration * 4);
       } else {
-        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
+        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W || this.touchstart){
           this.player.velocityY = this.player.jumpSize;
 		  if(seconds > hiScore){
             hiScore = seconds;
