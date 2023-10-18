@@ -96,13 +96,23 @@ Player.prototype.update = function() {
 	InfiniteRunner.hiScore = 0;	
   } 
   
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging || InfiniteRunner.touchstart) && this.velocityY < -8){	
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
   
 };
 
-addEventListener("touchstart", (update) => {});
+var e = document.getElementById("tap");
+e.addEventListener("touchstart", fctn, false);
+
+function fctn(e) {
+	if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+		this.velocityY += -0.75;
+	}
+    event.preventDefault();
+    return false;
+}
+
 
 Player.prototype.draw = function() {
   InfiniteRunner.fillStyle = this.color;
@@ -268,7 +278,7 @@ InfiniteRunner.setup = function () {
         this.player.velocityY = -10 + -(this.aceleration * 4);
         this.player.velocityX = -20 + -(this.aceleration * 4);
       } else {
-        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W || this.touchstart){
+        if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
           this.player.velocityY = this.player.jumpSize;
 		  if(seconds > hiScore){
             hiScore = seconds;
@@ -284,6 +294,8 @@ InfiniteRunner.setup = function () {
     this.particles[i].update();
   };
 };
+
+
 
 InfiniteRunner.draw = function(){
 	
