@@ -102,13 +102,13 @@ Player.prototype.update = function() {
   
 };
 
+
 var e = document.getElementById("tap");
 e.addEventListener("touchstart", fctn, false);
-
 function fctn(e) {
-	if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+	//if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
 		this.velocityY += -0.75;
-	}
+	//}
     event.preventDefault();
     return false;
 }
