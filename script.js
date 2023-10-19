@@ -103,8 +103,7 @@ Player.prototype.update = function() {
 };
 
 
-//var e = document.getElementById("tap");
-//e.addEventListener("touchstart", fctn, false);
+document.getElementById("tap").addEventListener("touchstart", jump);
 function jump() {
 	//if(InfiniteRunner.dragging && this.velocityY < -8){	
 		this.velocityY += -0.75;
