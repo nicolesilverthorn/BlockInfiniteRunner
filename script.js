@@ -103,12 +103,12 @@ Player.prototype.update = function() {
 };
 
 
-//var e = document.getElementById("tap");
-//document.addEventListener("touchstart", fctn, false);
-function fctn() {
-	if(this.velocityY < -8){	
+var e = document.getElementById("tap");
+e.addEventListener("touchstart", fctn, false);
+function fctn(e) {
+	//if(this.velocityY < -8){	
 		this.velocityY += -0.75;
-	}
+	//}
     event.preventDefault();
     return false;
 }
