@@ -105,9 +105,9 @@ Player.prototype.update = function() {
 
 document.getElementById("tap").addEventListener("touchstart", jump);
 function jump() {
-  if(InfiniteRunner.dragging && this.velocityY < -8){	
+  //if(InfiniteRunner.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
-  }
+  //}
 }
 
 
