@@ -108,6 +108,9 @@ function jump() {
   //if(InfiniteRunner.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
   //}
+    event.preventdefault();  
+    return false;
+
 }
 
 
