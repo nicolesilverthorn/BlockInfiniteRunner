@@ -25,24 +25,21 @@ canvas{
 	-webkit-text-fill-color: transparent;	
 	-webkit-text-stroke: 0.5px black;
 	width: 100%;
-	overflow-x: hidden;
+	
 }
 
 #container{
 	margin-top: 2%;
 	display: inline-block;
-	overflow-x: hidden;
 }
 
 #controls{
 	margin-top: 1.25%;
 	width: 100%;	
-	overflow-x: hidden;
 }
 
 #tap{
-	height: 100%;
-	width: 100%;
-	background: blue;
-	overflow-x: hidden;
+	width: 100vw;
+	height: 100vh;
+	background: green;
 }
