@@ -43,6 +43,6 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: black;
+	background: blue;
 	overflow-x: hidden;
 }
