@@ -1,3 +1,5 @@
+document.addEventListener("touchstart", function(){}, true);
+
 var i = 0;
 
 function random( min, max ) {
