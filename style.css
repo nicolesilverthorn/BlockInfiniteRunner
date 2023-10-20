@@ -1,7 +1,6 @@
 body{
 	background: #f9fcff;
 	overflow: hidden;
-	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -13,6 +12,7 @@ canvas{
 	background: #e7ebee;
 	border: 1px solid #000;
 	filter: drop-shadow(3px 3px 5px #b8b8b8);
+	
 }
 
 #header{
@@ -20,9 +20,9 @@ canvas{
 	display: block;
 	font-size: 2em;
 	font-weight: bold;
-	background-image: linear-gradient(45deg, #fff, #fff, #fff, #fff, #fff, #fff, #fff,  
-											 #006994, #006994, #333399, #333399, #00ced1, #00ced1, #00ccff, #00ccff, #5d89ba, #5d89ba, 
-											 #fff, #fff, #fff, #fff, #fff, #fff, #fff);
+	background-image: linear-gradient(45deg, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff,
+											 #006994, #333399, #00ced1, #00ccff, #5d89ba, 
+											 #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff, #fff);
 	filter: drop-shadow(3px 3px 3px #b8b8b8);											 
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;	
@@ -32,7 +32,8 @@ canvas{
 
 #container{
 	margin-top: 2%;
-	display: inline-block;
+	display: block;
+	width: 100%;
 }
 
 #controls{
@@ -45,4 +46,11 @@ canvas{
 	height: 100vh;
 	background: green;
 	overflow-x: hidden;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	#header{
+		background-image: linear-gradient(45deg, #006994, #333399, #00ced1, #00ccff, #5d89ba);
+	}
+	
 }
