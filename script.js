@@ -1,5 +1,3 @@
-document.addEventListener("touchstart", function(){}, true);
-
 var i = 0;
 
 function random( min, max ) {
@@ -104,10 +102,9 @@ Player.prototype.update = function() {
   
 };
 
-
 document.getElementById("tap").addEventListener("touchstart", jump, false);
 function jump(event) {
-  if(InfiniteRunner.dragging && this.velocityY < -8){	
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
     event.preventdefault(); 
