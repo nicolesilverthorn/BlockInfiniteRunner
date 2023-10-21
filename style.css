@@ -12,7 +12,6 @@ canvas{
 	background: #e7ebee;
 	border: 1px solid #000;
 	filter: drop-shadow(3px 3px 5px #b8b8b8);
-	
 }
 
 #header{
@@ -33,8 +32,6 @@ canvas{
 #container{
 	margin-top: 2%;
 	display: block;
-	
-	width: 100vw;
 }
 
 #controls{
@@ -45,7 +42,7 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: black;
+	background: blue;
 	overflow-x: hidden;
 }
 
