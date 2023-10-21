@@ -105,6 +105,7 @@ Player.prototype.update = function() {
 
 function onload(){
 	document.getElementById("tap").addEventListener("touchstart", jump, false);
+	document.getElementById("container").addEventListener("touchstart", jump, false);
 }
 function jump(event) {
   this.velocityY += 1;
@@ -241,67 +242,67 @@ InfiniteRunner.setup = function () {
 	this.hiScore = 0;  
 };
 
-	InfiniteRunner.update = function() {
-		setInterval(score, 1000);
-	  this.player.update();
-	  switch(seconds){ 
-		case 10:
-		  this.acelerationTweening = 1;
-		  this.platformManager.maxDistanceBetween = 430;
-		  this.scoreColor = 'mediumblue';
-		  break;
-		case 20:
-		  this.acelerationTweening = 2;
-		  this.platformManager.maxDistanceBetween = 530;
-		  this.scoreColor = 'seagreen';
-		  break;
-		case 30:
-		  this.acelerationTweening = 3;
-		  this.platformManager.maxDistanceBetween = 580;
-		  this.scoreColor = 'orange';
-		  break;
+InfiniteRunner.update = function() {
+	setInterval(score, 1000);
+  this.player.update();
+  switch(seconds){ 
+	case 10:
+	  this.acelerationTweening = 1;
+	  this.platformManager.maxDistanceBetween = 430;
+	  this.scoreColor = 'mediumblue';
+	  break;
+	case 20:
+	  this.acelerationTweening = 2;
+	  this.platformManager.maxDistanceBetween = 530;
+	  this.scoreColor = 'seagreen';
+	  break;
+	case 30:
+	  this.acelerationTweening = 3;
+	  this.platformManager.maxDistanceBetween = 580;
+	  this.scoreColor = 'orange';
+	  break;
+  }
+  this.aceleration += (this.acelerationTweening - this.aceleration) * 0.01;
+  for (i = 0; i < this.platformManager.platforms.length; i++) {
+	if(this.player.insercects(this.platformManager.platforms[i])){
+	  this.collidedPlatform = this.platformManager.platforms[i];
+	  if (this.player.y < this.platformManager.platforms[i].y) {
+		this.player.y = this.platformManager.platforms[i].y;
+		this.player.velocityY = 0;	
 	  }
-	  this.aceleration += (this.acelerationTweening - this.aceleration) * 0.01;
-	  for (i = 0; i < this.platformManager.platforms.length; i++) {
-		if(this.player.insercects(this.platformManager.platforms[i])){
-		  this.collidedPlatform = this.platformManager.platforms[i];
-		  if (this.player.y < this.platformManager.platforms[i].y) {
-			this.player.y = this.platformManager.platforms[i].y;
-			this.player.velocityY = 0;	
-		  }
-		  this.player.x = this.player.previousX;
-		  this.player.y = this.player.previousY;
-		  
+	  this.player.x = this.player.previousX;
+	  this.player.y = this.player.previousY;
+	  
+	  this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
+		x: this.player.x,
+		y: this.player.y + this.player.height,
+		color: this.collidedPlatform.color
+	  });
+	  if(this.player.insercectsLeft(this.platformManager.platforms[i])){
+		this.player.x = this.collidedPlatform.x - 64;
+		for (i = 0; i < 10; i++) {
 		  this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
-			x: this.player.x,
-			y: this.player.y + this.player.height,
-			color: this.collidedPlatform.color
+			x: this.player.x + this.player.width,
+			y: random(this.player.y, this.player.y + this.player.height),
+			velocityY: random(-30, 30),
+			color: randomChoice(['#000', '#666', this.collidedPlatform.color])
 		  });
-		  if(this.player.insercectsLeft(this.platformManager.platforms[i])){
-			this.player.x = this.collidedPlatform.x - 64;
-			for (i = 0; i < 10; i++) {
-			  this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
-				x: this.player.x + this.player.width,
-				y: random(this.player.y, this.player.y + this.player.height),
-				velocityY: random(-30, 30),
-				color: randomChoice(['#000', '#666', this.collidedPlatform.color])
-			  });
-			};
-			clearInterval(timer);
-			seconds = 0;
-			
-			this.player.velocityY = -10 + -(this.aceleration * 4);
-			this.player.velocityX = -20 + -(this.aceleration * 4);
-		  } else {
-			if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
-			  this.player.velocityY = this.player.jumpSize;
-			  if(seconds > hiScore){
-				hiScore = seconds;
-			  }
-			}
+		};
+		clearInterval(timer);
+		seconds = 0;
+		
+		this.player.velocityY = -10 + -(this.aceleration * 4);
+		this.player.velocityX = -20 + -(this.aceleration * 4);
+	  } else {
+		if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
+		  this.player.velocityY = this.player.jumpSize;
+		  if(seconds > hiScore){
+			hiScore = seconds;
 		  }
 		}
-	  };
+	  }
+	}
+  };
   for (i = 0; i < this.platformManager.platforms.length; i++) {
     this.platformManager.update();
   };

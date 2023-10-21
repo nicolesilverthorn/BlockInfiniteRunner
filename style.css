@@ -40,7 +40,7 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: gold;
+	background: black;
 	overflow-x: hidden;
 }
 
