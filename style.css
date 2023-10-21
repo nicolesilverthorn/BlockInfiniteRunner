@@ -4,8 +4,6 @@ body{
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	
-	
 }
 
 canvas{
@@ -42,11 +40,14 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: blue;
+	background: gold;
 	overflow-x: hidden;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	body{
+		width: 640px;
+	}
 	#header{
 		background-image: linear-gradient(45deg, #fff, #006994, #333399, #00ced1, #00ccff, #5d89ba, #fff);
 	}
