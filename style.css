@@ -30,6 +30,8 @@ canvas{
 #container{
 	margin-top: 2%;
 	display: block;
+	
+	cursor: pointer;
 }
 
 #controls{
@@ -40,8 +42,10 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: green;
+	background: blue;
 	overflow: hidden;
+	
+	cursor: pointer;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
