@@ -120,11 +120,11 @@ tapArea.addEventListener('touchstart', function(e) {
 	InfiniteRunner.seconds = 0;
 	InfiniteRunner.hiScore = 0;	
   } */
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+  if(InfiniteRunner.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
     e.preventdefault();  
-});
+}, false);
 
 
 
