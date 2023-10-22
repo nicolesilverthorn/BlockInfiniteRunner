@@ -127,16 +127,6 @@ tapArea.addEventListener('touchstart', function(e) {
   }
     e.preventdefault();  
 });
-$(document).ready(function(){
-    resizeDiv();
-});
-window.onresize = function(event) {
-    resizeDiv();
-}
-function resizeDiv() {
-    vpw = $(window).width();
-    $('#container').css({'width': vpw + 'px'});
-}
 
 
 
