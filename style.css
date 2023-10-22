@@ -42,7 +42,7 @@ canvas{
 #tap{
 	width: 100vw;
 	height: 100vh;
-	background: black;
+	background: green;
 	overflow: hidden;
 	
 	cursor: pointer;
