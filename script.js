@@ -104,8 +104,9 @@ Player.prototype.update = function() {
 
 
 document.body.addEventListener('touchstart', function(e) {});
+var tapArea = document.getElementById('tap');
 
-$("#tap").on("tap", function(e) {
+tapArea.addEventListener('touchstart', function(e) {
   this.velocityY += 1;
   this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
   if(this.y > InfiniteRunner.height || this.x + this.width < 0){
@@ -124,8 +125,18 @@ $("#tap").on("tap", function(e) {
   if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
-    e.preventdefault();
+    e.preventdefault();  
 });
+$(document).ready(function(){
+    resizeDiv();
+});
+window.onresize = function(event) {
+    resizeDiv();
+}
+function resizeDiv() {
+    vpw = $(window).width();
+    $('#container').css({'width': vpw + 'px'});
+}
 
 
 
