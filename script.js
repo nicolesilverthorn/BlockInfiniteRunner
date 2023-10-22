@@ -104,10 +104,8 @@ Player.prototype.update = function() {
 
 
 document.body.addEventListener('touchstart', function(e) {});
-var tapArea = document.getElementById('tap');
-//var tapCont = document.getElementById('container');
 
-tapArea.addEventListener('touchstart', function(e) {
+$("#tap").on("tap", function(e) {
   this.velocityY += 1;
   this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
   if(this.y > InfiniteRunner.height || this.x + this.width < 0){
@@ -126,8 +124,9 @@ tapArea.addEventListener('touchstart', function(e) {
   if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
-    e.preventdefault();  
+    e.preventdefault();
 });
+
 
 
 Player.prototype.draw = function() {
