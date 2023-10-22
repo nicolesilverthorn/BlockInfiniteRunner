@@ -103,9 +103,7 @@ Player.prototype.update = function() {
 };
 
 
-document.body.addEventListener('touchstart', function(e) {});
 var tapArea = document.getElementById('tap');
-
 tapArea.addEventListener('touchstart', function(e) {
   this.velocityY += 1;
   this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
