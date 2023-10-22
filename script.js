@@ -103,11 +103,11 @@ Player.prototype.update = function() {
 };
 
 
-function onload(){
-	document.getElementById("tap").addEventListener("touchstart", jump, false);
-	document.getElementById("container").addEventListener("touchstart", jump, false);
-}
-function jump(event) {
+document.body.addEventListener('touchstart', function(e) {});
+var tapArea = document.getElementById('tap');
+//var tapCont = document.getElementById('container');
+
+tapArea.addEventListener('touchstart', function(e) {
   this.velocityY += 1;
   this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
   if(this.y > InfiniteRunner.height || this.x + this.width < 0){
@@ -126,8 +126,8 @@ function jump(event) {
   if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
-    event.preventdefault(); 
-}
+    e.preventdefault();  
+});
 
 
 Player.prototype.draw = function() {
