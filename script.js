@@ -103,8 +103,7 @@ Player.prototype.update = function() {
 
 const para = document.querySelector("p");
 para.addEventListener("touchstart", (event) => {
-  //console.log("Pointer down event");
-  if(para.dragging && this.velocityY < -8){	
+  if(para.on && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
   event.preventDefault();
