@@ -102,11 +102,14 @@ Player.prototype.update = function() {
 };
 
 const para = document.querySelector("p");
-para.addEventListener("touchstart", (event) => {
-  if(para.on && this.velocityY < -8){	
+para.addEventListener("touchstart", (e) => {
+  e.touches = e.createTouchList(
+    e.createTouch(window, target, 0, pageX, pageY, screenX, screenY)
+);
+  if(para.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
-  event.preventDefault();
+  e.preventDefault();
 });
 
 
