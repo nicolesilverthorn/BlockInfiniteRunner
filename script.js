@@ -102,12 +102,12 @@ Player.prototype.update = function() {
 };
 
 const para = document.querySelector("p");
-para.addEventListener("pointerdown", (event) => {
-  console.log("Pointer down event");
-  
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+para.addEventListener("touchstart", (event) => {
+  //console.log("Pointer down event");
+  if(para.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
+  event.preventDefault();
 });
 
 
