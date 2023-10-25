@@ -101,12 +101,10 @@ Player.prototype.update = function() {
   
 };
 
-const para = document.querySelector("p");
-para.addEventListener("touchstart", (e) => {
-  e.touches = e.createTouchList(
-    e.createTouch(window, target, 0, pageX, pageY, screenX, screenY)
-);
-  if(para.dragging && this.velocityY < -8){	
+var tapArea = document.getElementById("container");
+tapArea.addEventListener("touchstart", (e) => {
+  e.touches = e.createTouchList(e.createTouch(window, target, 0, pageX, pageY, screenX, screenY));
+  if(tapArea.dragging && this.velocityY < -8){	
     this.velocityY += -0.75;
   }
   e.preventDefault();
