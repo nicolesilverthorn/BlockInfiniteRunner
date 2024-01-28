@@ -101,15 +101,16 @@ Player.prototype.update = function() {
   
 };
 
-var tapArea = document.getElementById("container");
-tapArea.addEventListener("touchstart", (e) => {
-  e.touches = e.createTouchList(e.createTouch(window, target, 0, pageX, pageY, screenX, screenY));
-  if(tapArea.dragging && this.velocityY < -8){	
-    this.velocityY += -0.75;
+document.addEventListener("touchstart", touchHandler);
+document.addEventListener("touchmove", touchHandler);
+function touchHandler(e) {
+  if (e.touches) {
+    playerX = e.touches[0].pageX - canvas.offsetLeft - playerWidth / 2;
+    playerY = e.touches[0].pageY - canvas.offsetTop - playerHeight / 2;
+    output.textContent = `Touch:  x: ${playerX}, y: ${playerY}`;
+    e.preventDefault();
   }
-  e.preventDefault();
-});
-
+}
 
 
 Player.prototype.draw = function() {
