@@ -105,10 +105,8 @@ var theElement = document.getElementById("tap");
 
 theElement.addEventListener("touchstart", handlerFunction, false);
 
-function handlerFunction(event) {
-	if(this.velocityY < -8){	
+function handlerFunction(event) {	
     this.velocityY += -0.75;
-  }
 }
 
 
