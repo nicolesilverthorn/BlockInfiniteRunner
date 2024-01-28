@@ -101,15 +101,12 @@ Player.prototype.update = function() {
   
 };
 
-document.addEventListener("touchstart", touchHandler);
-document.addEventListener("touchmove", touchHandler);
-function touchHandler(e) {
-  if (e.touches) {
-    playerX = e.touches[0].pageX - canvas.offsetLeft - playerWidth / 2;
-    playerY = e.touches[0].pageY - canvas.offsetTop - playerHeight / 2;
-    output.textContent = `Touch:  x: ${playerX}, y: ${playerY}`;
-    e.preventDefault();
-  }
+var theElement = document.getElementById("tap");
+
+theElement.addEventListener("touchstart", handlerFunction, false);
+
+function handlerFunction(event) {
+alert();
 }
 
 
