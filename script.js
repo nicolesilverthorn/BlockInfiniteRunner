@@ -105,10 +105,8 @@ var theElement = document.getElementById("tap");
 
 theElement.addEventListener("touchstart", handlerFunction, false);
 
-function handlerFunction(event) {	
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
-    this.velocityY += -0.75;
-  }
+function handlerFunction(event) {		
+    InfiniteRunner.velocityY += -0.75;
 }
 
 
