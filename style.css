@@ -46,7 +46,7 @@ canvas{
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	body{
-		width: 100vw;
+		width: 640px;
 	}
 	#header{
 		background-image: linear-gradient(45deg, #fff, #fff, #fff, #006994, #333399, #00ced1, #00ccff, #5d89ba, #fff, #fff, #fff);
