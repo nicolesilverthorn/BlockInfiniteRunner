@@ -103,7 +103,7 @@ Player.prototype.update = function() {
 
 //var tap = document.getElementById("tap");
 //tap.addEventListener("touchstart", tapBtn, false);
-function tapBtn() {	
+Player.prototype.update = tapBtn() {	
 	this.velocityY += 1;
   this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
   if(this.y > InfiniteRunner.height || this.x + this.width < 0){
@@ -119,9 +119,9 @@ function tapBtn() {
 	InfiniteRunner.seconds = 0;
 	InfiniteRunner.hiScore = 0;	
   }  
-  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+  //if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
     this.velocityY += -0.75;
-  }
+  //}
 }
 
 
