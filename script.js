@@ -103,9 +103,25 @@ Player.prototype.update = function() {
 
 //var tap = document.getElementById("tap");
 //tap.addEventListener("touchstart", tapBtn, false);
-function tapBtn(e) {
-	InfiniteRunner.velocityY += -0.75;
-	e.preventDefault();
+function tapBtn() {	
+	this.velocityY += 1;
+  this.setPosition(this.x + this.velocityX, this.y + this.velocityY);
+  if(this.y > InfiniteRunner.height || this.x + this.width < 0){
+    this.x = 150;
+    this.y = 50;
+    this.velocityX = 0;
+    this.velocityY = 0;
+    InfiniteRunner.aceleration = 0;
+    InfiniteRunner.acelerationTweening = 0;
+    InfiniteRunner.scoreColor = '#000';
+    InfiniteRunner.platformManager.maxDistanceBetween = 350;
+    InfiniteRunner.platformManager.updateWhenLose();
+	InfiniteRunner.seconds = 0;
+	InfiniteRunner.hiScore = 0;	
+  }  
+  if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
+    this.velocityY += -0.75;
+  }
 }
 
 
