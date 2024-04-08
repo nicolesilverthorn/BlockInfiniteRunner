@@ -101,10 +101,11 @@ Player.prototype.update = function() {
   
 };
 
-var tap = document.getElementById("tap");
-tap.addEventListener("touchstart", tapBtn, false);
-function tapBtn() {
+//var tap = document.getElementById("tap");
+//tap.addEventListener("touchstart", tapBtn, false);
+function tapBtn(e) {
 	InfiniteRunner.velocityY += -0.75;
+	e.preventDefault();
 }
 
 
