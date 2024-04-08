@@ -102,14 +102,9 @@ Player.prototype.update = function() {
 };
 
 var tap = document.getElementById("tap");
-tap.addEventListener("touchstart", touchDown, false);
-function touchDown() {
-	if(this.dragging || this.keys.SPACE || this.keys.UP || this.keys.W){
-		  this.player.velocityY = this.player.jumpSize;
-	}
-	if((InfiniteRunner.keys.UP || InfiniteRunner.keys.SPACE || InfiniteRunner.keys.W || InfiniteRunner.dragging) && this.velocityY < -8){	
-		this.velocityY += -0.75;
-    }
+tap.addEventListener("touchstart", tapBtn, false);
+function tapBtn() {
+	InfiniteRunner.velocityY += -0.75;
 }
 
 
