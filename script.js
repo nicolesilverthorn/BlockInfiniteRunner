@@ -106,7 +106,7 @@ tap.addEventListener("touchstart", tapBtn, false);
 function tapBtn(evt){
 	evt.preventDefault();
     if (evt.touches.length > 1 || (evt.type === 'touchend' && evt.touches.length > 0)) {
-        this.velocityY += -0.75;
+        Player.prototype.velocityY += -0.75;
     }
 }
 
